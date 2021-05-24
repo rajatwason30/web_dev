@@ -3,7 +3,7 @@
 * git config --global user.email "rajatwason30@gmail.com"
 # If new git repository
 * git init
-* git remote add origin "path of git repository on github"
+* git remote add origin "https://github.com/rajatwason30/dev_pp.git"
 # Always steps For Git
 * git add . ( Stage all files )
 * git commit -m "This is my first commit"
