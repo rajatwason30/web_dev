@@ -32,19 +32,23 @@ function sortFolder(folderPath)
     {
         let filename=fileList[i];
         let extensionName=path.extname(filename);
-        if(extensionName.length==0)
+        let isDirectory=fs.lstatSync(folderPath+"/"+filename).isDirectory();
+        if(isDirectory)
         {
             //recursively sort other folders within downloads folder 
             //a new folder. Sort this folder as well
             let nextFolderPath=folderPath+"/"+filename;
             sortFolder(nextFolderPath);
         }
-        let fileFolderPath=getFolderPath(extensionName,folderPath);
-        //move files
-        let srcpath=folderPath+"/"+filename; //"./Downloads/abc.jpg"
-        let dstpath=fileFolderPath+"/"+filename;
-        fs.copyFileSync(srcpath,dstpath);
-        fs.unlinkSync(srcpath);
+        else
+        {
+            let fileFolderPath=getFolderPath(extensionName,folderPath);
+            //move files
+            let srcpath=folderPath+"/"+filename; //"./Downloads/abc.jpg"
+            let dstpath=fileFolderPath+"/"+filename;
+            fs.copyFileSync(srcpath,dstpath);
+            fs.unlinkSync(srcpath);
+        }
     }
 }
 
