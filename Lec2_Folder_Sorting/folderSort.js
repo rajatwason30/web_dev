@@ -2,6 +2,8 @@ const fs=require("fs");
 const path=require("path");
 let extension=require("./utils.js")
 let folderPath = "./Downloads";
+let setOfFolders=["Audio","Images","Videos","Compressed","Documents"];
+
 
 function getFolderPath(extensionName,folderPath)
 {
@@ -37,8 +39,11 @@ function sortFolder(folderPath)
         {
             //recursively sort other folders within downloads folder 
             //a new folder. Sort this folder as well
-            let nextFolderPath=folderPath+"/"+filename;
-            sortFolder(nextFolderPath);
+            if(!setOfFolders.includes(filename))
+            {
+                let nextFolderPath=folderPath+"/"+filename;
+                sortFolder(nextFolderPath);
+            }
         }
         else
         {
