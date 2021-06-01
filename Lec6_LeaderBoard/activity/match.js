@@ -68,10 +68,10 @@ function processLeaderBoard(teamName,name,runs,balls,fours,sixes)
         leaderBoard.push(playerInfo);
     }
     else{
-        leaderBoard[i]['Runs']= parseFloat(leaderBoard[i]['Runs'])+parseFloat(runs);
-        leaderBoard[i]['Balls']= parseFloat(leaderBoard[i]['Balls'])+parseFloat(balls);
-        leaderBoard[i]['Fours']= parseFloat(leaderBoard[i]['Fours'])+parseFloat(fours);
-        leaderBoard[i]['Sixes']= parseFloat(leaderBoard[i]['Sixes'])+parseFloat(sixes);
+        leaderBoard[i]['Runs']+= Number(runs);
+        leaderBoard[i]['Balls']+= Number(balls);
+        leaderBoard[i]['Fours']+= Number(fours);
+        leaderBoard[i]['Sixes']+= Number(sixes);
     }
 }
 function processLeaderBoardFile(teamName,name,runs,balls,fours,sixes)

@@ -16,6 +16,6 @@ function parseData(html){
         let linkToScoreCard="https://www.espncricinfo.com"+ch(allScoreCards[i]).attr("href");
         matchData(linkToScoreCard); 
     }
-    //console.log("I ran after for loop!");
+    console.log("I ran after for loop!");
 }
 module.exports=getAllMatches;
