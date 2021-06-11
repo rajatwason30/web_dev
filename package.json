@@ -19,6 +19,7 @@
   "homepage": "https://github.com/rajatwason30/dev_pp#readme",
   "dependencies": {
     "cheerio": "^1.0.0-rc.9",
+    "puppeteer": "^10.0.0",
     "request": "^2.88.2"
   }
 }
