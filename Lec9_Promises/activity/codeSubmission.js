@@ -79,8 +79,18 @@ browserOpenPromise
     console.log("Received list of links");
     let completeLinks = listOfLinks.map(link=>{return "https://www.hackerrank.com" + link;});
     console.log(completeLinks);
-    let oneQuesSolvePromise= solveQuestion(completeLinks[0]);
-    return oneQuesSolvePromise;
+    let quesSolvePromise= solveQuestion(completeLinks[0]);
+    for(let i=1;i<completeLinks.length;i++){
+      quesSolvePromise = quesSolvePromise.then(function(){
+        console.log("Question number -->",i-1,"<-- solved!")
+        let nextQuestionSolvePromise = solveQuestion(completeLinks[i]);
+        return nextQuestionSolvePromise;
+      })
+    }
+    return quesSolvePromise;
+  })
+  .then(function(){
+    console.log("All questions solved!!")
   })
   .catch(function(error){
       console.log(error);
@@ -203,6 +213,32 @@ browserOpenPromise
     })
   }
 
+  function handleLockBtn(){
+    return new Promise( function(resolve , reject){
+      let waitPromise = tab.waitForSelector('.ui-btn.ui-btn-normal.ui-btn-primary.ui-btn-styled' , {visible:true , timeout:5000});
+      waitPromise.then(function(){
+        let lockBtnPromise = tab.$('.ui-btn.ui-btn-normal.ui-btn-primary.ui-btn-styled');
+        return lockBtnPromise;
+      })
+      .then(function(lockBtn){
+        // console.log(lockBtn);
+        let lockBtnClickPromise = lockBtn.click();
+        return lockBtnClickPromise;
+      })
+      .then(function(){
+        // clicked on lock btn
+        // lock btn found
+        console.log("lock btn found !!!");
+        resolve();
+      })
+      .catch(function(error){
+        // lock btn not found
+        console.log("lock btn not found !!!");
+        resolve();
+      })
+    })
+  }
+
   function solveQuestion(qLink){
     return new Promise(function(resolve, reject){
       let clickPromise= tab.goto(qLink);
@@ -211,11 +247,10 @@ browserOpenPromise
         console.log("clicked on editorial");
         return editorialPromise;
       })
-      // .then(function(){
-      //   let acceptEditorialPromise= waitAndClick(".ui-btn.ui-btn-normal.ui-btn-primary.ui-btn-styled");
-      //   console.log("clicked on i want to unlock editorial");
-      //   return acceptEditorialPromise;
-      // })
+      .then(function(){
+        let lockButtonPromise = handleLockBtn();
+        return lockButtonPromise;
+      })
       .then(function(){
         let codePromise= getCode();
         return codePromise;
