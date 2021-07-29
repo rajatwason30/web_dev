@@ -35,10 +35,10 @@ let pw="123456789";
     // for 1 challenge
     // await addChallenge(challenges[0],browser,createChallengeLink);
     // simultaenously open tabs for all the challenges
-    // for(let i=0 ; i<challenges.length ; i++){
-    //     addChallenge(challenges[i] , browser , createChallengeLink );
-    //     await tab.waitForTimeout(3000);
-    // }
+    for(let i=0 ; i<challenges.length ; i++){
+        addChallenge(challenges[i] , browser , createChallengeLink );
+        await tab.waitForTimeout(3000);
+    }
     
     // OR
 
@@ -48,7 +48,6 @@ let pw="123456789";
         await addChallenge(challenges[i] , browser , createChallengeLink );
     }
 })();
-
 
 async function addChallenge(challenge, browser, link){
     let newTab = await browser.newPage();
@@ -64,5 +63,6 @@ async function addChallenge(challenge, browser, link){
     await newTab.type("#tags_tag",challenge["Tags"]);
     await newTab.keyboard.press("Enter");
     await newTab.click(".save-challenge.btn.btn-green");
-    newTab.close();
+    // await newTab.waitForTimeout(5000);
+    // newTab.close();
 }

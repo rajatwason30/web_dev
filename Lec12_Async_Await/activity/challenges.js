@@ -1,6 +1,6 @@
 module.exports = [
     {
-      "Challenge Name": "Pep_Java_1GettingStarted_1IsPrime",
+      "Challenge Name": "Pep_Java_1GettingStarted_1IsPrime1",
       "Description": "Question 1",
       "Problem Statement": "Take as input a number n. Determine whether it is prime or not. If it is prime, print 'Prime' otherwise print 'Not Prime.",
       "Input Format": "Integer",
@@ -19,7 +19,7 @@ module.exports = [
       ]
     },
     {
-      "Challenge Name": "Pep_Java_1GettingStarted_2PrimesTillN",
+      "Challenge Name": "Pep_Java_1GettingStarted_2PrimesTillN1",
       "Description": "Question 2",
       "Problem Statement": "Take as input n. Determine all prime numbers till n and print them on the same line with spaces in between",
       "Input Format": "Integer",
@@ -38,7 +38,7 @@ module.exports = [
       ]
     },
     {
-      "Challenge Name": "Pep_Java_1GettingStarted_3ReverseNumber",
+      "Challenge Name": "Pep_Java_1GettingStarted_3ReverseNumber1",
       "Description": "Question 3",
       "Problem Statement": "Take as input n. Print the number in reverse.",
       "Input Format": "Integer",
@@ -57,7 +57,7 @@ module.exports = [
       ]
     },
     {
-      "Challenge Name": "Pep_Java_1GettingStarted_4GCD",
+      "Challenge Name": "Pep_Java_1GettingStarted_4GCD1",
       "Description": "Question 4",
       "Problem Statement": "Take as input two numbers n1 and n2. Calcualte their gcd. Print it.",
       "Input Format": "Integer",
@@ -76,7 +76,7 @@ module.exports = [
       ]
     },
     {
-      "Challenge Name": "Pep_Java_1GettingStarted_5Fib",
+      "Challenge Name": "Pep_Java_1GettingStarted_5Fib1",
       "Description": "Question 5",
       "Problem Statement": "Take as input a number n. \nPrint the nth number of Fibonacci sequence where  \n0th Fibonacci is 0 and 1st Fibonacci is 1. Here is a sample\n0 1 1 2 3 5 8 13 21 34 55",
       "Input Format": "Integer",
@@ -95,7 +95,7 @@ module.exports = [
       ]
     },
     {
-      "Challenge Name": "Pep_Java_1GettingStarted_6FibTillN",
+      "Challenge Name": "Pep_Java_1GettingStarted_6FibTillN1",
       "Description": "Question 6",
       "Problem Statement": "Take as input a number n.\nPrint all terms of Fibonacci sequence smaller than \nequal to n where\n0th Fibonacci is 0 and 1st Fibonacci is 1. Here is a sample0 1 1 2 3 5 8 13 21 34 55",
       "Input Format": "Integer",
@@ -114,7 +114,7 @@ module.exports = [
       ]
     }, 
     {
-      "Challenge Name": "Pep_Java_1GettingStarted_7Pattern1",
+      "Challenge Name": "Pep_Java_1GettingStarted_7Pattern11",
       "Description": "Question 7",
       "Problem Statement": `Take as input a number n, the number of rows  
       Print the following pattern  
@@ -140,7 +140,7 @@ module.exports = [
       ]
     },
      {
-      "Challenge Name": "Pep_Java_1GettingStarted_8Pattern2",
+      "Challenge Name": "Pep_Java_1GettingStarted_8Pattern21",
       "Description": "Question 8",
       "Problem Statement": `Take as input a number n, the number of rows
       Print the following pattern
@@ -178,7 +178,7 @@ module.exports = [
       ]
     },
      {
-      "Challenge Name": "Pep_Java_2NumberSystemAndFunctions_4Series",
+      "Challenge Name": "Pep_Java_2NumberSystemAndFunctions_4Seriesx",
       "Description": "Question 4",
       "Problem Statement": `Take as input
       1. first number: a
@@ -221,7 +221,7 @@ module.exports = [
       ]
     }, 
     {
-      "Challenge Name": "Pep_Java_2NumberSystemAndFunctions_5IsArmstrong",
+      "Challenge Name": "Pep_Java_2NumberSystemAndFunctions_5IsArmstrongx",
       "Description": "IsArmstrong",
       "Problem Statement": `Take as input
       1. Armstrong Number: arn
@@ -262,7 +262,7 @@ module.exports = [
       ]
     },
     {
-      "Challenge Name": "Pep_Java_3DataTypeAndBitManipulation_2NumberOfTimesADigitOccur",
+      "Challenge Name": "Pep_Java_3DataTypeAndBitManipulation_2NumberOfTimesADigitOccurx",
       "Description": "Number Of Times A Digit Occur",
       "Problem Statement": `Count the number of d's as digit in a number.
   
