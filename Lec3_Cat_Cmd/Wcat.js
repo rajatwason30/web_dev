@@ -2,6 +2,15 @@
 
 let content = process.argv.slice(2);
 let fs = require("fs");
+const os = require('os');
+
+const platform = os.platform();
+let lineEnding;
+if(platform==='darwin' || platform==='linux'){
+    lineEnding="\n";
+}else if(platform==='win32'){
+    lineEnding="\r\n"
+}
 
 let flags = [];
 let files = [];
@@ -18,7 +27,7 @@ let fileKaData="";//imp to initiallize as string
 for (let i = 0; i < files.length; i++) {
   fileKaData += fs.readFileSync(files[i]);
   if(i<files.length-1)
-    fileKaData += "\r\n";
+    fileKaData += lineEnding;
 }
 // console.log(fileKaData.split("\r\n"));
 //for doing changes acc to flags
@@ -40,7 +49,7 @@ console.log(fileKaData);
 
 function flagS(input)
 {
-    input=input.split("\r\n");
+    input=input.split(lineEnding);
     let data="";
     for(let i=0;i<input.length-1;i++)
     {
@@ -60,7 +69,7 @@ function flagS(input)
 }
 function flagB(input)
 {
-    input=input.split("\r\n");
+    input=input.split(lineEnding);
     let data="";
     let ct=1;
     for(let i=0;i<input.length;i++)
@@ -77,7 +86,7 @@ function flagB(input)
 }
 function flagN(input)
 {
-    input=input.split("\r\n");
+    input=input.split(lineEnding);
     let data="";
     let ct=1;
     for(let i=0;i<input.length;i++)

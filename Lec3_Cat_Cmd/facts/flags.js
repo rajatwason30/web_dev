@@ -1,10 +1,19 @@
 const fs=require("fs");
+const os = require('os');
+
+const platform = os.platform();
+let lineEnding;
+if(platform==='darwin' || platform==='linux'){
+    lineEnding="\n";
+}else if(platform==='win32'){
+    lineEnding="\r\n"
+}
 
 let filekadata=fs.readFileSync("./f1.txt","utf-8");
 
 function flagS(input)
 {
-    input=input.split("\r\n");
+    input=input.split(lineEnding);
     let data="";
     for(let i=0;i<input.length-1;i++)
     {
@@ -24,7 +33,7 @@ function flagS(input)
 }
 function flagB(input)
 {
-    input=input.split("\r\n");
+    input=input.split(lineEnding);
     let data="";
     let ct=1;
     for(let i=0;i<input.length;i++)
@@ -43,7 +52,7 @@ function flagB(input)
 }
 function flagN(input)
 {
-    input=input.split("\r\n");
+    input=input.split(lineEnding);
     let data="";
     let ct=1;
     for(let i=0;i<input.length;i++)
